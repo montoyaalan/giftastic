@@ -11,7 +11,7 @@ $(document).ready(function(){
     var topics = ["The Lion King", "Lizzie McGuire", "Mulan","Goofy",
     "Even Stevens","The Emperor's New Groove","Toy Story","Hannah Montana",
     "Aladdin","That's So Raven","Zenon","High School Musical","Frozen",
-    "Selena Gomez","Recess","Ducktales","Minnie Mouse"];
+    "AirBud","Recess","Ducktales","Minnie Mouse"];
 
 
 
