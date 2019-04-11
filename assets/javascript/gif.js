@@ -76,14 +76,15 @@ $(document).ready(function(){
         //LOOPS THROUGH THE TOPICS ARRAY FROM ABOVE 
         for (var i = 0; i < topics.length; i++){
 // ADDING THE USERS INPUT TO THE TOPICS ARRAY
-// SHOWING IT IN THE HTML FILE IN BUTTONS VIA JQUERY AND DOM MANIPULATION 
+// DYNAMICALLY MAKES BUTTON FOR EACH INPUT IN THE ARRAY 
             var newButton = $("<button>") 
             newButton.attr("class", "btn btn-default");
             newButton.attr("id", "input")  
+            //ADDING DATA ATTRIBUTE
             newButton.attr("data-name", topics[i]); 
             // ADDING THE TEXT FROM THE USER INPUT INTO THE BUTTON INTO TOPICS ARRAY 
             newButton.text(topics[i]); 
-            $("#display-buttons").append(newButton); 
+            $("#display-buttons").append(newButton); //APPEND THE BUTTON TO #display-buttons DIV 
         }
     }// CLOSING OF renderButtons FUNCTION 
 
