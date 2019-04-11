@@ -25,17 +25,19 @@ $(document).ready(function(){
         var limitGif = 10;
         var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + input + "&limit=" + limitGif + "&api_key=DaLLU3tL0xCrlpsKU7voLIZbK8gPOAkh";   
 
+        // STOLE THIS CODE FROM OUR INCLASS EXAMPLE
         $.ajax({
             url: queryURL, 
             method: "GET"
         }).done(function(response) {
 
             for(var j = 0; j < limitGif; j++) {    
-                //CREATING DIV IN HTML
+                //CREATING DIV IN HTML ASSIGNED WITH "displayDiv"
                 var displayDiv = $("<div>");
                 //CREATING A CLASS INSIDE THE DIV CALLED "HOLDER" FOR CSS
                 displayDiv.addClass("holder");
             
+                // CREATING VARIABLE "image" AND USING JQUERY TO DISPLAY IMAGES THAT ARE RETURNED 
                 var image = $("<img>");
                 image.attr("src", response.data[j].images.original_still.url);
                 image.attr("data-still", response.data[j].images.original_still.url);
@@ -46,10 +48,12 @@ $(document).ready(function(){
 
                 //GRABBING RATINGS FROM DATA FROM THE AJAX RESPONSE 
                 var rating = response.data[j].rating;
+                // TESTING MY RESPONSE 
                 console.log(response);
                 //THIS WILL BE THE VARIABLE OF RATINGS THAT WILL BE DISPLAYED IN THE HTML FILE 
                 //ITS TAKING THE RATING FROM THE RESPONSE'S DATA 
                 var pRating = $("<p>").text("Rating: " + rating);
+                //ATTACHING THE RATING OF RESPONSE AND ATTACHING IT TO DISPLAY WITH IMAGE (displayDiv)
                 displayDiv.append(pRating)
 
                 $("#display-images").append(displayDiv);
@@ -74,7 +78,7 @@ $(document).ready(function(){
             newButton.text(topics[i]); 
             $("#display-buttons").append(newButton); 
         }
-    }
+    }// CLOSING OF renderButtons FUNCTION 
 
 //STEP 2: MAKE A VARIABLE NAMED "STATE" AND THEN STORE THE IMAGES DATA-STATE INTO IT
 //USE THE .attr() METHOD FOR THIS
