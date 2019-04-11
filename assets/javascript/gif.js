@@ -13,6 +13,10 @@ $(document).ready(function(){
     "Aladdin","That's So Raven","Zenon","High School Musical","Frozen",
     "Selena Gomez","Recess","Ducktales","Minnie Mouse"];
 
+
+
+//CREATE ALL FUNCTIONS BELOW 
+
     function displayImg(){
 
         $("#display-images").empty();
@@ -27,7 +31,7 @@ $(document).ready(function(){
         }).done(function(response) {
 
             for(var j = 0; j < limitGif; j++) {    
-
+                //CREATING DIV IN HTML
                 var displayDiv = $("<div>");
                 //CREATING A CLASS CALLED "HOLDER" FOR CSS
                 displayDiv.addClass("holder");
@@ -40,15 +44,18 @@ $(document).ready(function(){
                 image.attr("class", "gif");
                 displayDiv.append(image);
 
+                //GRABBING RATINGS FROM DATA FROM THE AJAX RESPONSE 
                 var rating = response.data[j].rating;
                 console.log(response);
+                //THIS WILL BE THE VARIABLE OF RATINGS THAT WILL BE DISPLAYED IN THE HTML FILE 
+                //ITS TAKING THE RATING FROM THE RESPONSE'S DATA 
                 var pRating = $("<p>").text("Rating: " + rating);
                 displayDiv.append(pRating)
 
                 $("#display-images").append(displayDiv);
             }
-        });
-    }
+        });// CLOSING OF RESPONSE FUNCTION 
+    } // CLOSING BRACKET OF displayImg FUNCTION 
 
 //CALLING THE RENDER BUTTON TO DISPLAY THE INITIAL LIST OF TOPICS AS WELL AS 
  // - ADD THE NEW INPUT FROM THE USER AND MAKE IT INTO A BUTTON 
