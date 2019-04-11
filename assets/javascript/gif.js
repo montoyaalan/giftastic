@@ -66,12 +66,14 @@ $(document).ready(function(){
         });// CLOSING OF RESPONSE FUNCTION 
     } // CLOSING BRACKET OF displayImg FUNCTION 
 
-//CALLING THE RENDER BUTTON TO DISPLAY THE INITIAL LIST OF TOPICS AS WELL AS 
+//CREATING BUTTONS FOR EACH OF MY STRINGS IN MY TOPICS ARRAY
  // - ADD THE NEW INPUT FROM THE USER AND MAKE IT INTO A BUTTON 
     function renderButtons(){ 
 
+//DELETEAS THE SHOWS PRIOR TO ADDING NEW INPUT SO THERE ARE NO REPEAT BUTTONS
         $("#display-buttons").empty();
 
+        //LOOPS THROUGH THE TOPICS ARRAY FROM ABOVE 
         for (var i = 0; i < topics.length; i++){
 // ADDING THE USERS INPUT TO THE TOPICS ARRAY
 // SHOWING IT IN THE HTML FILE IN BUTTONS VIA JQUERY AND DOM MANIPULATION 
@@ -112,14 +114,17 @@ $(document).ready(function(){
     }// CLOSING BRACKET FOR imageChangeState FUNCTION
 
     //THE FUNCTION TO TAKE IN THE USERS INPUT 
+    // HANDLES #submitPress BUTTON EVENT 
     $("#submitPress").on("click", function(){
-
+        // GRABS THE USERS INPUT 
         var input = $("#user-input").val().trim();
         form.reset();
+        // THE INPUT IS NOW ADDED TO THE TOPICS ARRAY 
         topics.push(input);
-                
+        //renderButtons FUNCTION IS CALLED WHICH MAKES BUTTONS FOR MY SUGGESTIONS (topics) PLUS THE USERS INPUT        
         renderButtons();
 
+        //THIS LINE SO THE USER CAN PRESS ENTER INSTEAD OF PRESSING SUBMIT 
         return false;
     })
 //EVOKING FUNCTION 

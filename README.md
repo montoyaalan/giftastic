@@ -8,6 +8,10 @@ I MET WITH FELLOW PROGRAMMING FRIENDS AND HAD THEM EXPLAIN THE CODE TO ME LINE B
 
 THE THEME FOR MY GIF PROJECT IS ALL THINGS DISNEY. However, you can search anything really, I juat wanted to add a theme that sparked my interest.
 
+
+FINAL PRODUCT: https://montoyaalan.github.io/giftastic/
+
+
 GifTastic
 Overview
 In this assignment, you'll use the GIPHY API to make a dynamic web page that populates with gifs of your choice. To finish this task, you must call the GIPHY API and use JavaScript and jQuery to change the HTML of your site.
