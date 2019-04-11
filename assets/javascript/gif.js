@@ -17,6 +17,8 @@ $(document).ready(function(){
 
 //CREATE ALL FUNCTIONS BELOW 
 
+
+//THE FUNCTION TO DISPLAY IMG FROM GIPHY
     function displayImg(){
 
         $("#display-images").empty();
@@ -25,13 +27,16 @@ $(document).ready(function(){
         var limitGif = 10;
         var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + input + "&limit=" + limitGif + "&api_key=DaLLU3tL0xCrlpsKU7voLIZbK8gPOAkh";   
 
+
+        //CREATING AJAX CALL 
         // STOLE THIS CODE FROM OUR INCLASS EXAMPLE
         $.ajax({
             url: queryURL, 
             method: "GET"
         }).done(function(response) {
-
+// for loop goes through each gif and adds these variables
             for(var j = 0; j < limitGif; j++) {    
+                //SAVING RESULTS AS VARIABLE 
                 //CREATING DIV IN HTML ASSIGNED WITH "displayDiv"
                 var displayDiv = $("<div>");
                 //CREATING A CLASS INSIDE THE DIV CALLED "HOLDER" FOR CSS
@@ -88,6 +93,7 @@ $(document).ready(function(){
         var animateImage = $(this).attr("data-animate");
         var stillImage = $(this).attr("data-still");
 
+//THE FUNCTIONS FOT ANIMATING GIFS
       // STEP 3: CHECK IF THE VARIABLE "STATE" IS EQUAL TO "STILL"
       //THEN UPDATE THE "src" ATTRIBUTE OF THIS IMAGE TO ITS DATA-ANIMATE VALUE
       //AND UPDATE THE "DATA-STATE" ATTRIBUTE TO "ANIMATE"
@@ -103,7 +109,7 @@ $(document).ready(function(){
             $(this).attr("src", stillImage);
             $(this).attr("data-state", "still");
         }   
-    }
+    }// CLOSING BRACKET FOR imageChangeState FUNCTION
 
     //THE FUNCTION TO TAKE IN THE USERS INPUT 
     $("#submitPress").on("click", function(){
@@ -116,9 +122,10 @@ $(document).ready(function(){
 
         return false;
     })
-
+//EVOKING FUNCTION 
     renderButtons();
 
+    //FUCNTIONS FOR DISPLAYING DISNEY GIFS AND IMAGES FROM USERS INPUT 
     $(document).on("click", "#input", displayImg);
     $(document).on("click", ".gif", imageChangeState);
 });
