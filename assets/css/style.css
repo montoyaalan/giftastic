@@ -8,11 +8,16 @@ img {
 }
 
 label {
-    color: #fff;
+    background-color: aliceblue;
+    opacity: 0.5;
+}
+
+label{
+    color: blue;
 }
 
 .btn-default {
-    color: #000;
+    color: black;
     font-size: medium;
 }
 

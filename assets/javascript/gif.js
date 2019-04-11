@@ -1,30 +1,35 @@
 // THIS IS THE CODE FOR MY GIF ASSIGNMENT 
 // USED IN CLASS ACTIVITIES BUT WAS ALSO ABLE TO FIND TUTORIAL VIDEO FOR THIS SPECIFIC ASSIGNMENT. 
-// USED STYLING FROM BOOTSTRAP BECAUSE THE CODING ITSELF TOOK FOREVER TO PIECE 
+// USED STYLING FROM BOOTSTRAP BECAUSE THE CODING ITSELF TOOK FOREVER TO PIECE AND TIME IS PRECIOUS
 
 
-// NEVER FORGET THIS OTHERWISE FILE WILL NOT WORK 
+// NEVER FORGET OTHERWISE CODE WILL NOT WORK 0
 $(document).ready(function(){
 
 
     //MY INITIAL ARRAY OF DISNEY "TOPICS"
-    var topics = ["The Lion King", "Lizzie McGuire", "Mulan","Goofy","Even Stevens","The Emperor's New Groove","Toy Story","Hannah Montana"];
+    var topics = ["The Lion King", "Lizzie McGuire", "Mulan","Goofy",
+    "Even Stevens","The Emperor's New Groove","Toy Story","Hannah Montana",
+    "Aladdin","That's So Raven","Zenon","High School Musical","Frozen",
+    "Selena Gomez","Recess","Ducktales","Minnie Mouse"];
 
     function displayImg(){
 
         $("#display-images").empty();
         var input = $(this).attr("data-name");
-        var limit = 10;
-        var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + input + "&limit=" + limit + "&api_key=DaLLU3tL0xCrlpsKU7voLIZbK8gPOAkh";   
+        //SETTING THE LIMIT OF HOW MANY GIPHYS CAN BE RETURNED 
+        var limitGif = 10;
+        var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + input + "&limit=" + limitGif + "&api_key=DaLLU3tL0xCrlpsKU7voLIZbK8gPOAkh";   
 
         $.ajax({
             url: queryURL, 
             method: "GET"
         }).done(function(response) {
 
-            for(var j = 0; j < limit; j++) {    
+            for(var j = 0; j < limitGif; j++) {    
 
                 var displayDiv = $("<div>");
+                //CREATING A CLASS CALLED "HOLDER" FOR CSS
                 displayDiv.addClass("holder");
             
                 var image = $("<img>");
@@ -58,6 +63,7 @@ $(document).ready(function(){
             newButton.attr("class", "btn btn-default");
             newButton.attr("id", "input")  
             newButton.attr("data-name", topics[i]); 
+            // ADDING THE TEXT FROM THE USER INPUT INTO THE BUTTON INTO TOPICS ARRAY 
             newButton.text(topics[i]); 
             $("#display-buttons").append(newButton); 
         }
