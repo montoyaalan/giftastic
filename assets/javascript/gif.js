@@ -33,7 +33,7 @@ $(document).ready(function(){
             for(var j = 0; j < limitGif; j++) {    
                 //CREATING DIV IN HTML
                 var displayDiv = $("<div>");
-                //CREATING A CLASS CALLED "HOLDER" FOR CSS
+                //CREATING A CLASS INSIDE THE DIV CALLED "HOLDER" FOR CSS
                 displayDiv.addClass("holder");
             
                 var image = $("<img>");
@@ -84,11 +84,11 @@ $(document).ready(function(){
         var animateImage = $(this).attr("data-animate");
         var stillImage = $(this).attr("data-still");
 
-      // STEP 3: CHECK IF THE VARIABLE STATE IS EQUAL TO STILL
+      // STEP 3: CHECK IF THE VARIABLE "STATE" IS EQUAL TO "STILL"
       //THEN UPDATE THE "src" ATTRIBUTE OF THIS IMAGE TO ITS DATA-ANIMATE VALUE
       //AND UPDATE THE "DATA-STATE" ATTRIBUTE TO "ANIMATE"
-    // IF STATE IS EQUAL TO "ANIMATE" THEN UPDATE THE "src" ATTRIBUTE OF THIS
-    // IMAGE TO ITS DATA-STILL VALUE AND UPDATE THE DATA-STATE ATTRIBUTE TO STILL
+    // IF "STATE" IS EQUAL TO "ANIMATE" THEN UPDATE THE "src" ATTRIBUTE OF "THIS"
+    // IMAGE TO ITS DATA-STILL VALUE AND UPDATE THE DATA-STATE ATTRIBUTE TO "STILL"
 
         if(state == "still") {
             $(this).attr("src", animateImage);
