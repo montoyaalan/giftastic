@@ -1,5 +1,13 @@
+// THIS IS THE CODE FOR MY GIF ASSIGNMENT 
+// USED IN CLASS ACTIVITIES BUT WAS ALSO ABLE TO FIND TUTORIAL VIDEO FOR THIS SPECIFIC ASSIGNMENT. 
+// USED STYLING FROM BOOTSTRAP BECAUSE THE CODING ITSELF TOOK FOREVER TO PIECE 
+
+
+// NEVER FORGET THIS OTHERWISE FILE WILL NOT WORK 
 $(document).ready(function(){
 
+
+    //MY INITIAL ARRAY OF DISNEY "TOPICS"
     var topics = ["The Lion King", "Lizzie McGuire", "Mulan","Goofy","Even Stevens","The Emperor's New Groove","Toy Story","Hannah Montana"];
 
     function displayImg(){
@@ -37,12 +45,15 @@ $(document).ready(function(){
         });
     }
 
+//CALLING THE RENDER BUTTON TO DISPLAY THE INITIAL LIST OF TOPICS AS WELL AS 
+ // - ADD THE NEW INPUT FROM THE USER AND MAKE IT INTO A BUTTON 
     function renderButtons(){ 
 
         $("#display-buttons").empty();
 
         for (var i = 0; i < topics.length; i++){
-
+// ADDING THE USERS INPUT TO THE TOPICS ARRAY
+// SHOWING IT IN THE HTML FILE IN BUTTONS VIA JQUERY AND DOM MANIPULATION 
             var newButton = $("<button>") 
             newButton.attr("class", "btn btn-default");
             newButton.attr("id", "input")  
