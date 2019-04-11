@@ -21,6 +21,8 @@ $(document).ready(function(){
 //THE FUNCTION TO DISPLAY IMG FROM GIPHY
     function displayImg(){
 
+//THIS PART WAS STOLEN FROM IN CLASS ACTIVITY. USED AS A BASE 
+//DELETES THE input PRIOR TO ADDING NEW INPUT SO THERE ARE NO REPEAT IMAGES
         $("#display-images").empty();
         var input = $(this).attr("data-name");
         //SETTING THE LIMIT OF HOW MANY GIPHYS CAN BE RETURNED 
@@ -70,7 +72,7 @@ $(document).ready(function(){
  // - ADD THE NEW INPUT FROM THE USER AND MAKE IT INTO A BUTTON 
     function renderButtons(){ 
 
-//DELETEAS THE SHOWS PRIOR TO ADDING NEW INPUT SO THERE ARE NO REPEAT BUTTONS
+//DELETES THE input PRIOR TO ADDING NEW INPUT SO THERE ARE NO REPEAT BUTTONS
         $("#display-buttons").empty();
 
         //LOOPS THROUGH THE TOPICS ARRAY FROM ABOVE 
