@@ -76,11 +76,19 @@ $(document).ready(function(){
         }
     }
 
+//STEP 2: MAKE A VARIABLE NAMED "STATE" AND THEN STORE THE IMAGES DATA-STATE INTO IT
+//USE THE .attr() METHOD FOR THIS
     function imageChangeState() {          
 
         var state = $(this).attr("data-state");
         var animateImage = $(this).attr("data-animate");
         var stillImage = $(this).attr("data-still");
+
+      // STEP 3: CHECK IF THE VARIABLE STATE IS EQUAL TO STILL
+      //THEN UPDATE THE "src" ATTRIBUTE OF THIS IMAGE TO ITS DATA-ANIMATE VALUE
+      //AND UPDATE THE "DATA-STATE" ATTRIBUTE TO "ANIMATE"
+    // IF STATE IS EQUAL TO "ANIMATE" THEN UPDATE THE "src" ATTRIBUTE OF THIS
+    // IMAGE TO ITS DATA-STILL VALUE AND UPDATE THE DATA-STATE ATTRIBUTE TO STILL
 
         if(state == "still") {
             $(this).attr("src", animateImage);
@@ -93,6 +101,7 @@ $(document).ready(function(){
         }   
     }
 
+    //THE FUNCTION TO TAKE IN THE USERS INPUT 
     $("#submitPress").on("click", function(){
 
         var input = $("#user-input").val().trim();
